@@ -42,3 +42,15 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #ddd;
 }
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: 10px;
+  left: 10px;
+  background: url('uni_freiburg_logo.png') no-repeat;
+  background-size: auto;
+  width: 150px; /* Adjust the width as needed */
+  height: auto;
+  opacity: 0.1;
+}
