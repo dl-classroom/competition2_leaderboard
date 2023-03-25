@@ -48,7 +48,7 @@ body::before {
   z-index: -1;
   top: 10px;
   left: 10px;
-  background: url('https://raw.githubusercontent.com/gurizab/leaderboard/main/uni_freiburg_logo.jpg') no-repeat;
+  background: url('https://raw.githubusercontent.com/gurizab/leaderboard/master/uni_freiburg_logo.jpg') no-repeat;
   background-size: auto;
   width: 150px; /* Adjust the width as needed */
   height: auto;
