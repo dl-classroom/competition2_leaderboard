@@ -1,1 +1,1 @@
-# Tree Species Segmentation Challenge leaderboard
+# Tree Species Segmentation Challenge Leaderboard
