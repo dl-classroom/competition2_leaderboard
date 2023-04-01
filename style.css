@@ -50,3 +50,6 @@ tr:hover {
   width: 150px;
   opacity: 1;
 }
+td:nth-child(3) {
+  text-align: right;
+}
