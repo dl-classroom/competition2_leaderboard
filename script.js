@@ -1,7 +1,6 @@
 const leaderboardData = [
   // Example data
-  { rank: 1, team: 'Sample Model', submission: 1, score: 95, date: '2023-03-21' },
-  { rank: 2, team: 'Sample Model', submission: 2, score: 90, date: '2023-03-22' },
+  { rank: 1, team: 'Sample Model', submission: 1, score: 37.537, date: '2023-03-21' },
   // Add more leaderboard data here
 ];
 
