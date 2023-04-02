@@ -33,7 +33,12 @@ Object.entries(groupedData).forEach(([team, scores]) => {
 
     Object.keys(entry).forEach((key) => {
       const cell = document.createElement('td');
-      cell.textContent = entry[key];
+
+      if (key === 'score') {
+        cell.textContent = `${entry[key]}%`; // Append the percentage sign to the score
+      } else {
+        cell.textContent = entry[key];
+      }
 
       if (key === 'team') {
         cell.classList.add('team-cell');
