@@ -36,22 +36,32 @@ Object.entries(groupedData).forEach(([team, scores]) => {
       row.style.display = 'none';
     }
 
-    Object.keys(entry).forEach((key) => {
-      const cell = document.createElement('td');
+    // Create rank cell
+    const rankCell = document.createElement('td');
+    rankCell.textContent = entry.rank;
+    row.appendChild(rankCell);
 
-      if (key === 'score') {
-        cell.textContent = `${entry[key]}%`; // Append the percentage sign to the score
-      } else {
-        cell.textContent = entry[key];
-      }
+    // Create team cell
+    const teamCell = document.createElement('td');
+    teamCell.textContent = entry.team;
+    teamCell.classList.add('team-cell');
+    teamCell.style.cursor = 'pointer';
+    row.appendChild(teamCell);
 
-      if (key === 'team') {
-        cell.classList.add('team-cell');
-        cell.style.cursor = 'pointer';
-      }
+    // Create submission cell
+    const submissionCell = document.createElement('td');
+    submissionCell.textContent = entry.submission;
+    row.appendChild(submissionCell);
 
-      row.appendChild(cell);
-    });
+    // Create score cell
+    const scoreCell = document.createElement('td');
+    scoreCell.textContent = `${entry.score}%`;
+    row.appendChild(scoreCell);
+
+    // Create date cell
+    const dateCell = document.createElement('td');
+    dateCell.textContent = entry.date;
+    row.appendChild(dateCell);
 
     tableBody.appendChild(row);
   });
