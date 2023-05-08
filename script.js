@@ -1,9 +1,11 @@
 const leaderboardData = [
   // Example data
-  { rank: 1, team: 'Sample Model', submission: 1, score: 23.358, date: '2023-03-21' },
-  { rank: 2, team: 'NLL', submission: 1, score: 20.671, date: '2023-04-15' },
-  { rank: 3, team: 'heisenberg', submission: 1, score: 18.289, date: '2023-04-26'},
-  { rank: 4, team: 'imageseg2023', submission: 1, score: 14.964, date: '2023-04-22'},
+  { rank: 2, team: 'Sample Model', submission: 1, score: 23.358, date: '2023-03-21' },
+  { rank: 3, team: 'NLL', submission: 1, score: 20.671, date: '2023-04-15' },
+  { rank: 4, team: 'heisenberg', submission: 1, score: 18.289, date: '2023-04-26'},
+  { rank: 5, team: 'imageseg2023', submission: 1, score: 14.964, date: '2023-04-22'},
+  { rank: 1, team: 'segmantics', submission: 1, score: 24.038, date: '2023-05-05'},
+  
 
   // Add more leaderboard data here
 ];
