@@ -1,16 +1,21 @@
 const leaderboardData = [
   // Example data
-  { rank: 2, team: 'Sample Model', submission: 1, score: 23.358, date: '2023-03-21' },
-  { rank: 3, team: 'NLL', submission: 1, score: 20.671, date: '2023-04-15' },
-  { rank: 4, team: 'heisenberg', submission: 1, score: 18.289, date: '2023-04-26'},
-  { rank: 5, team: 'imageseg2023', submission: 1, score: 14.964, date: '2023-04-22'},
-  { rank: 1, team: 'segmantics', submission: 1, score: 24.038, date: '2023-05-05'},
-  
-
-  // Add more leaderboard data here
+  { team: 'Sample Model', submission: 1, score: 23.358, date: '2023-03-21' },
+  { team: 'NLL', submission: 1, score: 20.671, date: '2023-04-15' },
+  { team: 'heisenberg', submission: 1, score: 18.289, date: '2023-04-26'},
+  { team: 'imageseg2023', submission: 1, score: 14.964, date: '2023-04-22'},
+  { team: 'segmantics', submission: 1, score: 24.038, date: '2023-05-05'},
 ];
 
 const tableBody = document.getElementById('table-body');
+
+// Sort leaderboardData by descending score
+leaderboardData.sort((a, b) => b.score - a.score);
+
+// Assign ranks based on the sorted leaderboardData
+leaderboardData.forEach((entry, index) => {
+  entry.rank = index + 1;
+});
 
 // Group scores by team
 const groupedData = leaderboardData.reduce((acc, entry) => {
@@ -20,11 +25,6 @@ const groupedData = leaderboardData.reduce((acc, entry) => {
   acc[entry.team].push(entry);
   return acc;
 }, {});
-
-// Sort scores within each team by descending score
-Object.values(groupedData).forEach((teamScores) =>
-  teamScores.sort((a, b) => b.score - a.score)
-);
 
 // Create table rows
 Object.entries(groupedData).forEach(([team, scores]) => {
@@ -72,4 +72,3 @@ tableBody.addEventListener('click', (event) => {
     }
   });
 });
-
