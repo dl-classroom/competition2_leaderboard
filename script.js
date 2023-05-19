@@ -1,10 +1,9 @@
 const leaderboardData = [
-  // Example data
-  { team: 'Sample Model', submission: 1, score: 23.358, date: '2023-03-21' },
-  { team: 'NLL', submission: 1, score: 20.671, date: '2023-04-15' },
-  { team: 'heisenberg', submission: 1, score: 18.289, date: '2023-04-26'},
-  { team: 'imageseg2023', submission: 1, score: 14.964, date: '2023-04-22'},
-  { team: 'segmantics', submission: 1, score: 24.038, date: '2023-05-05'},
+  { team: 'Sample Model', submission: 1, score: 23.358, oldScore: 23.358, date: '2023-03-21' },
+  { team: 'NLL', submission: 1, score: 20.671, oldScore: 20.671, date: '2023-04-15' },
+  { team: 'heisenberg', submission: 1, score: 18.289, oldScore: 18.289, date: '2023-04-26'},
+  { team: 'imageseg2023', submission: 1, score: 14.964, oldScore: 14.964, date: '2023-04-22'},
+  { team: 'segmantics', submission: 1, score: 24.038, oldScore: 24.038, date: '2023-05-05'},
 ];
 
 const tableBody = document.getElementById('table-body');
