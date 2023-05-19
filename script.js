@@ -52,6 +52,11 @@ Object.entries(groupedData).forEach(([team, scores]) => {
     submissionCell.textContent = entry.submission;
     row.appendChild(submissionCell);
 
+    // Create Old Data Score cell
+    const oldScoreCell = document.createElement('td');
+    oldScoreCell.textContent = `${entry.oldScore}%`;
+    row.appendChild(oldScoreCell);
+
     // Create score cell
     const scoreCell = document.createElement('td');
     scoreCell.textContent = `${entry.score}%`;
@@ -65,6 +70,7 @@ Object.entries(groupedData).forEach(([team, scores]) => {
     tableBody.appendChild(row);
   });
 });
+
 
 // Toggle scores event listener
 tableBody.addEventListener('click', (event) => {
