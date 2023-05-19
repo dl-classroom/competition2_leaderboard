@@ -5,6 +5,8 @@ const leaderboardData = [
   { team: 'imageseg2023', submission: 1, score: 19.416, oldScore: 14.964, date: '2023-04-22'},
   { team: 'segmantics', submission: 1, score: 22.854, oldScore: 24.038, date: '2023-05-05'},
   { team: 'segmantics', submission: 2, score: 24.170, oldScore: null, date: '2023-05-16'},
+  { team: 'wildnet', submission: 1, score: 22.571, oldScore: null, date: '2023-05-18'},
+  { team: 'wildnet', submission: 2, score: 22.614, oldScore: null, date: '2023-05-18'},
 ];
 
 // Save old scores separately
