@@ -1,11 +1,16 @@
 const leaderboardData = [
   { team: 'Sample Model', submission: 1, score: 22.650, oldScore: 23.358, date: '2023-03-21' },
-  { team: 'NLL', submission: 1, score: 22.957, oldScore: 20.671, date: '2023-04-15' },
-  { team: 'heisenberg', submission: 1, score: 19.514, oldScore: 18.289, date: '2023-04-26'},
-  { team: 'imageseg2023', submission: 1, score: 19.416, oldScore: 14.964, date: '2023-04-22'},
-  { team: 'segmantics', submission: 1, score: 22.854, oldScore: 24.038, date: '2023-05-05'},
-  { team: 'segmantics', submission: 2, score: 24.170, oldScore: 0, date: '2023-05-16'},
+  { team: 'NLL', submission: 1, score: 20.671, oldScore: 20.671, date: '2023-04-15' },
+  { team: 'heisenberg', submission: 1, score: 18.289, oldScore: 18.289, date: '2023-04-26'},
+  { team: 'imageseg2023', submission: 1, score: 14.964, oldScore: 14.964, date: '2023-04-22'},
+  { team: 'segmantics', submission: 1, score: 24.038, oldScore: 24.038, date: '2023-05-05'},
 ];
+
+// Save old scores separately
+const oldScores = leaderboardData.reduce((acc, entry) => {
+  acc[entry.team] = entry.oldScore;
+  return acc;
+}, {});
 
 const tableBody = document.getElementById('table-body');
 
@@ -55,7 +60,7 @@ Object.entries(groupedData).forEach(([team, scores]) => {
 
     // Create Old Data Score cell
     const oldScoreCell = document.createElement('td');
-    oldScoreCell.textContent = `${entry.oldScore}%`;
+    oldScoreCell.textContent = `${oldScores[entry.team]}%`; // Use oldScores to get the old score
     row.appendChild(oldScoreCell);
 
     // Create score cell
@@ -72,7 +77,6 @@ Object.entries(groupedData).forEach(([team, scores]) => {
   });
 });
 
-
 // Toggle scores event listener
 tableBody.addEventListener('click', (event) => {
   if (!event.target.classList.contains('team-cell')) {
@@ -88,3 +92,4 @@ tableBody.addEventListener('click', (event) => {
     }
   });
 });
+
