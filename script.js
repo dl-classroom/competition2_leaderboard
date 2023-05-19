@@ -33,6 +33,7 @@ const groupedData = leaderboardData.reduce((acc, entry) => {
 
 // Create table rows
 Object.entries(groupedData).forEach(([team, scores]) => {
+  scores.sort((a, b) => b.score - a.score); // sort team scores in descending order
   scores.forEach((entry, index) => {
     const row = document.createElement('tr');
     row.classList.add(`team-${team.replace(/\s+/g, '-')}`);
@@ -60,7 +61,7 @@ Object.entries(groupedData).forEach(([team, scores]) => {
 
     // Create Old Data Score cell
     const oldScoreCell = document.createElement('td');
-    oldScoreCell.textContent = `${oldScores[entry.team]}%`; // Use oldScores to get the old score
+    oldScoreCell.textContent = `${entry.oldScore}%`;
     row.appendChild(oldScoreCell);
 
     // Create score cell
@@ -92,4 +93,5 @@ tableBody.addEventListener('click', (event) => {
     }
   });
 });
+
 
